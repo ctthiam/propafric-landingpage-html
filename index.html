@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
+  <style id="pricing-css-patch">
     :root {
       --green-deep:   #1a3d2e;
       --green-main:   #2D6A4F;
@@ -844,122 +844,64 @@
       color: var(--white);
     }
     .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1100px; margin: 0 auto;
-      align-items: start;
-    }
-    .pricing-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 40px 36px;
-      border: 1.5px solid rgba(0,0,0,0.06);
-      position: relative;
-      transition: all 0.35s;
-    }
-    .pricing-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-green); }
-    .pricing-card.popular {
-      background: var(--green-main);
-      border-color: var(--green-main);
-      transform: scale(1.04);
-    }
-    .pricing-card.popular:hover { transform: scale(1.04) translateY(-6px); }
-    .pricing-badge {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      padding: 6px 20px;
-      background: var(--gold-main);
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .pricing-plan {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--green-main);
-      margin-bottom: 12px;
-    }
-    .pricing-card.popular .pricing-plan { color: rgba(255,255,255,0.7); }
-    .pricing-price {
-      font-family: var(--font-display);
-      font-size: 52px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .pricing-card.popular .pricing-price { color: var(--white); }
-    .pricing-currency {
-      font-size: 20px;
-      vertical-align: super;
-      font-weight: 400;
-    }
-    .pricing-period {
-      font-size: 14px;
-      color: var(--ink-light);
-      margin-bottom: 28px;
-    }
-    .pricing-card.popular .pricing-period { color: rgba(255,255,255,0.55); }
-    .pricing-desc {
-      font-size: 14px;
-      color: var(--ink-light);
-      line-height: 1.6;
-      margin-bottom: 28px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid rgba(0,0,0,0.07);
-    }
-    .pricing-card.popular .pricing-desc { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.12); }
-    .pricing-features { list-style: none; margin-bottom: 36px; }
-    .pricing-feature {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 8px 0;
-      font-size: 14px;
-      color: var(--ink-mid);
-      line-height: 1.4;
-    }
-    .pricing-card.popular .pricing-feature { color: rgba(255,255,255,0.8); }
-    .pricing-check {
-      width: 18px; height: 18px; flex-shrink: 0;
-      border-radius: 50%;
-      background: rgba(45,106,79,0.1);
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 1px;
-    }
-    .pricing-card.popular .pricing-check { background: rgba(255,255,255,0.2); }
-    .pricing-check::after {
-      content: '✓';
-      font-size: 10px;
-      color: var(--green-main);
-      font-weight: 700;
-    }
-    .pricing-card.popular .pricing-check::after { color: var(--white); }
-    .btn-pricing {
-      display: block;
-      text-align: center;
-      padding: 14px;
-      border-radius: var(--radius-sm);
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s;
-    }
-    .btn-pricing-outline {
-      border: 1.5px solid var(--green-main);
-      color: var(--green-main);
-    }
-    .btn-pricing-outline:hover { background: var(--green-main); color: var(--white); }
-    .btn-pricing-white {
-      background: var(--white);
-      color: var(--green-main);
-    }
-    .btn-pricing-white:hover { background: var(--gold-pale); }
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: start;
+}
+.pricing-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 36px 28px;
+  border: 1.5px solid rgba(0,0,0,0.06);
+  position: relative;
+  transition: all 0.35s;
+}
+.pricing-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-green); }
+.pricing-card.popular {
+  background: var(--green-main);
+  border-color: var(--green-main);
+  transform: scale(1.03);
+}
+.pricing-card.popular:hover { transform: scale(1.03) translateY(-6px); }
+.pricing-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  padding: 6px 20px; background: var(--gold-main); border-radius: 100px;
+  font-size: 11px; font-weight: 700; color: var(--ink);
+  letter-spacing: 0.8px; text-transform: uppercase; white-space: nowrap;
+}
+.pricing-plan { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-main); margin-bottom: 12px; }
+.pricing-card.popular .pricing-plan { color: rgba(255,255,255,0.7); }
+.pricing-price { font-family: var(--font-display); font-size: 46px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+.pricing-card.popular .pricing-price { color: var(--white); }
+.pricing-currency { font-size: 18px; vertical-align: super; font-weight: 400; }
+.pricing-period { font-size: 13px; color: var(--ink-light); margin-bottom: 16px; }
+.pricing-card.popular .pricing-period { color: rgba(255,255,255,0.55); }
+.pricing-limit {
+  font-size: 13px; font-weight: 600; color: var(--ink-mid);
+  margin-bottom: 16px; padding: 8px 12px;
+  background: var(--cream); border-radius: 8px; text-align: center;
+}
+.pricing-card.popular .pricing-limit { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
+.pricing-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.07); }
+.pricing-card.popular .pricing-desc { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.12); }
+.pricing-features { list-style: none; margin-bottom: 28px; }
+.pricing-feature { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 13px; color: var(--ink-mid); line-height: 1.4; }
+.pricing-card.popular .pricing-feature { color: rgba(255,255,255,0.85); }
+.pricing-check { width: 18px; height: 18px; flex-shrink: 0; border-radius: 50%; background: rgba(45,106,79,0.1); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.pricing-card.popular .pricing-check { background: rgba(255,255,255,0.2); }
+.pricing-check::after { content: '✓'; font-size: 10px; color: var(--green-main); font-weight: 700; }
+.pricing-card.popular .pricing-check::after { color: var(--white); }
+.btn-pricing { display: block; text-align: center; padding: 13px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+.btn-pricing-outline { border: 1.5px solid var(--green-main); color: var(--green-main); }
+.btn-pricing-outline:hover { background: var(--green-main); color: var(--white); }
+.btn-pricing-white { background: var(--white); color: var(--green-main); }
+.btn-pricing-white:hover { background: var(--gold-pale); }
+ 
+@media (max-width: 1200px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } .pricing-card.popular { transform: scale(1); } .pricing-card.popular:hover { transform: translateY(-6px); } }
+@media (max-width: 640px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; } }
     /* ─── CTA FINAL ─── */
     .cta-section {
       padding: 100px 60px;
@@ -1442,10 +1384,10 @@
       <div class="testimonial-stars">★★★★★</div>
       <p class="testimonial-text">PropAfric a transformé notre façon de gérer nos 80 biens. Les relevés propriétaires qu'on faisait à la main en 3 jours, maintenant c'est 10 minutes.</p>
       <div class="testimonial-author">
-        <div class="testimonial-avatar">AK</div>
+        <div class="testimonial-avatar">AM</div>
         <div>
-          <div class="testimonial-name">Amadou Kane</div>
-          <div class="testimonial-role">Directeur — Citron Vert Immobilier, Dakar</div>
+         <div class="testimonial-name">Aïda Mbodji</div>
+<div class="testimonial-role">Directrice — Agence Citron Vert, Dakar</div>
         </div>
       </div>
     </div>
@@ -1464,12 +1406,12 @@
     <div class="testimonial-card reveal reveal-delay-2">
       <div class="testimonial-quote">"</div>
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">La gestion des TOM et de la TVA sur les frais de gestion était notre casse-tête. Avec PropAfric, tout est calculé automatiquement. Zéro erreur depuis 6 mois.</p>
+      <p class="testimonial-text">PropAfric nous a permis de professionnaliser notre gestion locative. La génération automatique des quittances et le suivi des impayés ont changé notre quotidien. Je le recommande à toutes les agences.</p>
       <div class="testimonial-author">
-        <div class="testimonial-avatar">DT</div>
+        <div class="testimonial-avatar">AG</div>
         <div>
-          <div class="testimonial-name">Djim Thiam</div>
-          <div class="testimonial-role">Fondateur —  ImmoAfric, Dakar</div>
+          <div class="testimonial-name">Aboubacar</div>
+<div class="testimonial-role">Directeur — GESIB Immo, Dakar</div>
         </div>
       </div>
     </div>
@@ -1483,21 +1425,23 @@
     <h2 class="section-title">Simple, <em>transparent</em>,<br>sans surprise</h2>
     <p class="section-desc" style="margin:16px auto 32px">Tous les plans incluent les mises à jour, le support et la migration de vos données.</p>
     <div class="pricing-toggle">
-      <button class="toggle-btn active" onclick="setToggle(this, 'mensuel')">Mensuel</button>
-      <button class="toggle-btn" onclick="setToggle(this, 'annuel')">Annuel <span style="color:var(--green-main);font-size:11px">-20%</span></button>
+      <button class="toggle-btn active" onclick="setToggle(this,'mensuel')">Mensuel</button>
+      <button class="toggle-btn" onclick="setToggle(this,'annuel')">Annuel <span style="color:var(--green-main);font-size:11px">économisez 2 mois</span></button>
     </div>
   </div>
   <div class="pricing-grid">
+ 
+    <!-- Starter -->
     <div class="pricing-card reveal">
       <div class="pricing-plan">Starter</div>
       <div class="pricing-price">
         <span class="pricing-currency">F</span>
-        <span class="price-val" data-mensuel="25 000" data-annuel="20 000">25 000</span>
+        <span class="price-val" data-mensuel="10 000" data-annuel="100 000">10 000</span>
       </div>
-      <div class="pricing-period">FCFA / mois · jusqu'à 20 biens</div>
+      <div class="pricing-period period-label" data-mensuel="FCFA / mois" data-annuel="FCFA / an">FCFA / mois</div>
+      <div class="pricing-limit">📦 Jusqu'à 10 biens</div>
       <div class="pricing-desc">Idéal pour les petites agences qui démarrent leur digitalisation.</div>
       <ul class="pricing-features">
-        <li class="pricing-feature"><span class="pricing-check"></span>Jusqu'à 20 biens</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Baux + échéances + paiements</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Quittances PDF automatiques</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Portail locataire</li>
@@ -1506,46 +1450,69 @@
       </ul>
       <a href="#contact" class="btn-pricing btn-pricing-outline">Commencer</a>
     </div>
+ 
+    <!-- Pro -->
     <div class="pricing-card popular reveal reveal-delay-1">
       <div class="pricing-badge">Le plus populaire</div>
-      <div class="pricing-plan">Professionnel</div>
+      <div class="pricing-plan">Pro</div>
       <div class="pricing-price">
         <span class="pricing-currency">F</span>
-        <span class="price-val" data-mensuel="55 000" data-annuel="44 000">55 000</span>
+        <span class="price-val" data-mensuel="25 000" data-annuel="250 000">25 000</span>
       </div>
-      <div class="pricing-period">FCFA / mois · jusqu'à 100 biens</div>
+      <div class="pricing-period period-label" data-mensuel="FCFA / mois" data-annuel="FCFA / an">FCFA / mois</div>
+      <div class="pricing-limit">📦 Jusqu'à 50 biens</div>
       <div class="pricing-desc">Pour les agences en croissance qui veulent tout gérer depuis une seule plateforme.</div>
       <ul class="pricing-features">
-        <li class="pricing-feature"><span class="pricing-check"></span>Jusqu'à 100 biens</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Tout le plan Starter</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Relevés propriétaires PDF</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Portail propriétaire</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Exports Excel (5 types)</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Gestion dépenses & prestataires</li>
-        <li class="pricing-feature"><span class="pricing-check"></span>5 utilisateurs agence</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>3 utilisateurs agence</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Support prioritaire</li>
       </ul>
       <a href="#contact" class="btn-pricing btn-pricing-white">Commencer</a>
     </div>
+ 
+    <!-- Business -->
     <div class="pricing-card reveal reveal-delay-2">
-      <div class="pricing-plan">Entreprise</div>
+      <div class="pricing-plan">Business</div>
       <div class="pricing-price">
-        <span class="pricing-currency"></span>
-        <span style="font-size:36px">Sur mesure</span>
+        <span class="pricing-currency">F</span>
+        <span class="price-val" data-mensuel="70 000" data-annuel="700 000">70 000</span>
       </div>
-      <div class="pricing-period">Biens illimités · Multi-agences</div>
-      <div class="pricing-desc">Pour les grands groupes immobiliers et les réseaux d'agences en Afrique de l'Ouest.</div>
+      <div class="pricing-period period-label" data-mensuel="FCFA / mois" data-annuel="FCFA / an">FCFA / mois</div>
+      <div class="pricing-limit">📦 Jusqu'à 200 biens</div>
+      <div class="pricing-desc">Pour les agences établies avec un portefeuille conséquent et une équipe dédiée.</div>
+      <ul class="pricing-features">
+        <li class="pricing-feature"><span class="pricing-check"></span>Tout le plan Pro</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Gestion d'immeubles (unités)</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Sous-profils (secrétaire, comptable)</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Rapports avancés</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>10 utilisateurs agence</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Support dédié</li>
+      </ul>
+      <a href="#contact" class="btn-pricing btn-pricing-outline">Commencer</a>
+    </div>
+ 
+    <!-- Entreprise -->
+    <div class="pricing-card reveal reveal-delay-3">
+      <div class="pricing-plan">Entreprise</div>
+      <div class="pricing-price" style="font-size:36px; padding-top:8px">Sur devis</div>
+      <div class="pricing-period">&nbsp;</div>
+      <div class="pricing-limit">📦 Plus de 200 biens</div>
+      <div class="pricing-desc">Pour les grands groupes immobiliers et réseaux multi-agences en Afrique de l'Ouest.</div>
       <ul class="pricing-features">
         <li class="pricing-feature"><span class="pricing-check"></span>Biens illimités</li>
-        <li class="pricing-feature"><span class="pricing-check"></span>Tout le plan Professionnel</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Tout le plan Business</li>
         <li class="pricing-feature"><span class="pricing-check"></span>Multi-agences (réseau)</li>
         <li class="pricing-feature"><span class="pricing-check"></span>API access</li>
-        <li class="pricing-feature"><span class="pricing-check"></span>Intégration NabooPay/Wave</li>
-        <li class="pricing-feature"><span class="pricing-check"></span>Onboarding dédié</li>
-        <li class="pricing-feature"><span class="pricing-check"></span>SLA garanti</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Intégration NabooPay / Wave</li>
+        <li class="pricing-feature"><span class="pricing-check"></span>Onboarding dédié + SLA garanti</li>
       </ul>
       <a href="#contact" class="btn-pricing btn-pricing-outline">Nous contacter</a>
     </div>
+ 
   </div>
 </section>
 
@@ -1627,7 +1594,7 @@
   </div>
 </footer>
 
-<script>
+<script id="pricing-js-patch">
   // ─── Custom Cursor ───
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1672,14 +1639,16 @@
 
   // ─── Pricing toggle ───
   let currentMode = 'mensuel';
-  function setToggle(btn, mode) {
-    currentMode = mode;
-    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.price-val').forEach(el => {
-      el.textContent = el.dataset[mode];
-    });
-  }
+function setToggle(btn, mode) {
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.price-val').forEach(el => {
+    el.textContent = el.dataset[mode];
+  });
+  document.querySelectorAll('.period-label').forEach(el => {
+    el.textContent = el.dataset[mode];
+  });
+}
 
   // ─── Counter animation ───
   function animateCounter(el, target, suffix = '') {
